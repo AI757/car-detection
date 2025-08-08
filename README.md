@@ -51,7 +51,7 @@ DATASET=data/cars
 
 imagenet.py \
   --model=$NET/resnet18.onnx \
-  --labels=$DATASET/labels.txt \
+  --labels=$NET/labels.txt \
   --input_blob=input_0 \
   --output_blob=output_0 \
   $DATASET/test/Convertible/convertible1.jpg output.jpg
