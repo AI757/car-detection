@@ -27,34 +27,28 @@ All training and inference was performed inside the NVIDIA Jetson Inference Dock
 
 ### 1. Start Docker Container
 
-```bash
 cd ~/jetson-inference/
 ./docker/run.sh
 
 ### 2. Navigate to the Training Directory
 
-```bash
 cd python/training/classification
 
 ### 3. Train the Model
 
-```bash
 python3 train.py --model-dir=models/cars data/cars
 
 ### 4. Convert Model to ONNX Format
 
-```bash
 python3 onnx_export.py --model-dir=models/cars
 
 ### 5. Set Environment Variables
 
-```bash
 NET=models/cars
 DATASET=data/cars
 
 ### 6.Test the Model 
 
-```bash
 imagenet.py \
   --model=$NET/resnet18.onnx \
   --labels=$DATASET/labels.txt \
